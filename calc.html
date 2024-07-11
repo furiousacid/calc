@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Molarity Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            margin: 5px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Molarity Calculator</h1>
+    <p>Calculate the molarity of a solution:</p>
+    <form id="molarityForm">
+        <label for="solute">Amount of Solute (grams):</label>
+        <input type="number" id="solute" name="solute" required>
+        
+        <label for="molarMass">Molar Mass of Solute (g/mol):</label>
+        <input type="number" id="molarMass" name="molarMass" required>
+        
+        <label for="volume">Volume of Solution (liters):</label>
+        <input type="number" id="volume" name="volume" step="0.01" required>
+        
+        <input type="button" value="Calculate Molarity" onclick="calculateMolarity()">
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function calculateMolarity() {
+            var solute = document.getElementById('solute').value;
+            var molarMass = document.getElementById('molarMass').value;
+            var volume = document.getElementById('volume').value;
+            var moles = solute / molarMass;
+            var molarity = moles / volume;
+            document.getElementById('result').innerText = 'Molarity: ' + molarity.toFixed(2) + ' M';
+        }
+    </script>
+</body>
+</html>
