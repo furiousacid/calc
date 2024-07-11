@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chemistry Calculators</title>
+    <title>FuriousAcid Chem Calculator v2.1- Step-by-Step</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -22,10 +22,17 @@
         .calculator input[type="number"], .calculator input[type="text"] {
             width: 100%;
         }
+        .steps {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
-    <h1>Chemistry Calculators</h1>
+    <h1>FuriousAcid Chem Calculator v2.1- Step-by-Step</h1>
 
     <!-- Ideal Gas Law Calculator -->
     <div class="calculator" id="idealGasLaw">
@@ -40,6 +47,7 @@
         <input type="number" id="temperature" step="any">
         <button onclick="calculateIdealGasLaw()">Calculate</button>
         <p>Result: <span id="idealGasResult"></span></p>
+        <div class="steps" id="idealGasSteps"></div>
     </div>
 
     <!-- Molarity Calculator -->
@@ -51,6 +59,7 @@
         <input type="number" id="volumeMolarity" step="any">
         <button onclick="calculateMolarity()">Calculate</button>
         <p>Result: <span id="molarityResult"></span></p>
+        <div class="steps" id="molaritySteps"></div>
     </div>
 
     <!-- Balancing Chemical Equations Calculator -->
@@ -60,6 +69,7 @@
         <input type="text" id="equationInput">
         <button onclick="balanceEquation()">Balance</button>
         <p>Result: <span id="balanceEquationResult"></span></p>
+        <div class="steps" id="balanceEquationSteps"></div>
     </div>
 
     <!-- Dilution Calculator -->
@@ -75,6 +85,7 @@
         <input type="number" id="finalVolume" step="any">
         <button onclick="calculateDilution()">Calculate</button>
         <p>Result: <span id="dilutionResult"></span></p>
+        <div class="steps" id="dilutionSteps"></div>
     </div>
 
     <!-- Percent Composition Calculator -->
@@ -86,15 +97,17 @@
         <input type="number" id="compoundMass" step="any">
         <button onclick="calculatePercentComposition()">Calculate</button>
         <p>Result: <span id="percentCompositionResult"></span></p>
+        <div class="steps" id="percentCompositionSteps"></div>
     </div>
 
     <!-- Empirical Formula Calculator -->
     <div class="calculator" id="empiricalFormulaCalculator">
         <h2>Empirical Formula Calculator</h2>
-        <label for="elementPercentages">Element Percentages (comma separated): </label>
+        <label for="elementPercentages">Element Percentages (comma-separated): </label>
         <input type="text" id="elementPercentages">
         <button onclick="calculateEmpiricalFormula()">Calculate</button>
         <p>Result: <span id="empiricalFormulaResult"></span></p>
+        <div class="steps" id="empiricalFormulaSteps"></div>
     </div>
 
     <!-- Molecular Formula Calculator -->
@@ -106,6 +119,7 @@
         <input type="number" id="molarMass" step="any">
         <button onclick="calculateMolecularFormula()">Calculate</button>
         <p>Result: <span id="molecularFormulaResult"></span></p>
+        <div class="steps" id="molecularFormulaSteps"></div>
     </div>
 
     <!-- Stoichiometry Calculator -->
@@ -119,6 +133,7 @@
         <input type="number" id="productRatio" step="any">
         <button onclick="calculateStoichiometry()">Calculate</button>
         <p>Result: <span id="stoichiometryResult"></span></p>
+        <div class="steps" id="stoichiometrySteps"></div>
     </div>
 
     <!-- pH Calculation -->
@@ -128,6 +143,7 @@
         <input type="number" id="hConcentration" step="any">
         <button onclick="calculatePH()">Calculate</button>
         <p>Result: <span id="pHResult"></span></p>
+        <div class="steps" id="pHSteps"></div>
     </div>
 
     <!-- pOH Calculation -->
@@ -137,6 +153,7 @@
         <input type="number" id="ohConcentration" step="any">
         <button onclick="calculatePOH()">Calculate</button>
         <p>Result: <span id="pOHResult"></span></p>
+        <div class="steps" id="pOHSteps"></div>
     </div>
 
     <!-- Gibbs Free Energy Calculator -->
@@ -150,6 +167,7 @@
         <input type="number" id="deltaS" step="any">
         <button onclick="calculateGibbsFreeEnergy()">Calculate</button>
         <p>Result: <span id="gibbsFreeEnergyResult"></span></p>
+        <div class="steps" id="gibbsFreeEnergySteps"></div>
     </div>
 
     <!-- Heat Calculator -->
@@ -163,6 +181,7 @@
         <input type="number" id="deltaT" step="any">
         <button onclick="calculateHeat()">Calculate</button>
         <p>Result: <span id="heatResult"></span></p>
+        <div class="steps" id="heatSteps"></div>
     </div>
 
     <!-- Rate Law Calculator -->
@@ -176,17 +195,19 @@
         <input type="number" id="orderA" step="any">
         <button onclick="calculateRateLaw()">Calculate</button>
         <p>Result: <span id="rateLawResult"></span></p>
+        <div class="steps" id="rateLawSteps"></div>
     </div>
 
     <!-- Equilibrium Constant Calculator -->
     <div class="calculator" id="equilibriumConstantCalculator">
         <h2>Equilibrium Constant Calculator (Kc)</h2>
-        <label for="concentrationProducts">Concentration of Products (comma separated): </label>
+        <label for="concentrationProducts">Concentration of Products (comma-separated): </label>
         <input type="text" id="concentrationProducts">
-        <label for="concentrationReactants">Concentration of Reactants (comma separated): </label>
+        <label for="concentrationReactants">Concentration of Reactants (comma-separated): </label>
         <input type="text" id="concentrationReactants">
         <button onclick="calculateEquilibriumConstant()">Calculate</button>
         <p>Result: <span id="equilibriumConstantResult"></span></p>
+        <div class="steps" id="equilibriumConstantSteps"></div>
     </div>
 
     <!-- Freezing Point Depression Calculator -->
@@ -198,6 +219,7 @@
         <input type="number" id="kf" step="any">
         <button onclick="calculateFreezingPointDepression()">Calculate</button>
         <p>Result: <span id="freezingPointDepressionResult"></span></p>
+        <div class="steps" id="freezingPointDepressionSteps"></div>
     </div>
 
     <!-- Boiling Point Elevation Calculator -->
@@ -209,6 +231,7 @@
         <input type="number" id="kb" step="any">
         <button onclick="calculateBoilingPointElevation()">Calculate</button>
         <p>Result: <span id="boilingPointElevationResult"></span></p>
+        <div class="steps" id="boilingPointElevationSteps"></div>
     </div>
 
     <!-- Redox Reactions Calculator -->
@@ -220,9 +243,10 @@
         <input type="text" id="reductionHalfReaction">
         <button onclick="calculateRedoxReactions()">Calculate</button>
         <p>Result: <span id="redoxReactionsResult"></span></p>
+        <div class="steps" id="redoxReactionsSteps"></div>
     </div>
 
-    <!-- Half-life Calculations -->
+    <!-- Half-life Calculator -->
     <div class="calculator" id="halfLifeCalculator">
         <h2>Half-life Calculator</h2>
         <label for="initialAmount">Initial Amount: </label>
@@ -233,6 +257,7 @@
         <input type="number" id="time" step="any">
         <button onclick="calculateHalfLife()">Calculate</button>
         <p>Result: <span id="halfLifeResult"></span></p>
+        <div class="steps" id="halfLifeSteps"></div>
     </div>
 
     <!-- Nuclear Decay Calculator -->
@@ -246,6 +271,7 @@
         <input type="number" id="timeNuclear" step="any">
         <button onclick="calculateNuclearDecay()">Calculate</button>
         <p>Result: <span id="nuclearDecayResult"></span></p>
+        <div class="steps" id="nuclearDecaySteps"></div>
     </div>
 
     <!-- Titration Calculator -->
@@ -259,6 +285,7 @@
         <input type="number" id="volumeAnalyte" step="any">
         <button onclick="calculateTitration()">Calculate</button>
         <p>Result: <span id="titrationResult"></span></p>
+        <div class="steps" id="titrationSteps"></div>
     </div>
 
     <!-- Avogadro’s Law Calculator -->
@@ -274,6 +301,7 @@
         <input type="number" id="moles2" step="any">
         <button onclick="calculateAvogadrosLaw()">Calculate</button>
         <p>Result: <span id="avogadrosLawResult"></span></p>
+        <div class="steps" id="avogadrosLawSteps"></div>
     </div>
 
     <!-- Boyle’s Law Calculator -->
@@ -289,6 +317,7 @@
         <input type="number" id="volumeBoyle2" step="any">
         <button onclick="calculateBoylesLaw()">Calculate</button>
         <p>Result: <span id="boylesLawResult"></span></p>
+        <div class="steps" id="boylesLawSteps"></div>
     </div>
 
     <!-- Charles’s Law Calculator -->
@@ -304,6 +333,7 @@
         <input type="number" id="temperatureCharles2" step="any">
         <button onclick="calculateCharlesLaw()">Calculate</button>
         <p>Result: <span id="charlesLawResult"></span></p>
+        <div class="steps" id="charlesLawSteps"></div>
     </div>
 
     <!-- Combined Gas Law Calculator -->
@@ -323,6 +353,7 @@
         <input type="number" id="temperatureCombined2" step="any">
         <button onclick="calculateCombinedGasLaw()">Calculate</button>
         <p>Result: <span id="combinedGasLawResult"></span></p>
+        <div class="steps" id="combinedGasLawSteps"></div>
     </div>
 
     <!-- Arrhenius Equation Calculator -->
@@ -338,6 +369,7 @@
         <input type="number" id="temperatureArrhenius2" step="any">
         <button onclick="calculateArrheniusEquation()">Calculate</button>
         <p>Result: <span id="arrheniusEquationResult"></span></p>
+        <div class="steps" id="arrheniusEquationSteps"></div>
     </div>
 
     <script>
@@ -350,10 +382,20 @@
             const T = parseFloat(document.getElementById('temperature').value);
 
             if (!isNaN(P) && !isNaN(V) && !isNaN(n) && !isNaN(T)) {
-                const result = (P * V) / (n * R * T);
-                document.getElementById('idealGasResult').textContent = result.toFixed(2) + ' atm';
+                const RCalc = (P * V) / (n * T);
+                document.getElementById('idealGasResult').textContent = `${RCalc.toFixed(4)} L·atm/(mol·K)`;
+
+                // Show steps
+                const steps = `
+                    Step 1: Use the ideal gas law formula PV = nRT <br>
+                    Step 2: Rearrange to solve for R: R = PV / (nT) <br>
+                    Step 3: Substitute the values: R = (${P} atm * ${V} L) / (${n} mol * ${T} K) <br>
+                    Step 4: Calculate the result: R = ${RCalc.toFixed(4)} L·atm/(mol·K)
+                `;
+                document.getElementById('idealGasSteps').innerHTML = steps;
             } else {
                 document.getElementById('idealGasResult').textContent = 'Please enter all values.';
+                document.getElementById('idealGasSteps').innerHTML = '';
             }
         }
 
@@ -363,19 +405,37 @@
             const V = parseFloat(document.getElementById('volumeMolarity').value);
 
             if (!isNaN(n) && !isNaN(V) && V !== 0) {
-                const result = n / V;
-                document.getElementById('molarityResult').textContent = result.toFixed(2) + ' M';
+                const M = n / V;
+                document.getElementById('molarityResult').textContent = `${M.toFixed(2)} M`;
+
+                // Show steps
+                const steps = `
+                    Step 1: Use the molarity formula M = n / V <br>
+                    Step 2: Substitute the values: M = ${n} mol / ${V} L <br>
+                    Step 3: Calculate the result: M = ${M.toFixed(2)} M
+                `;
+                document.getElementById('molaritySteps').innerHTML = steps;
             } else {
                 document.getElementById('molarityResult').textContent = 'Please enter valid values.';
+                document.getElementById('molaritySteps').innerHTML = '';
             }
         }
 
-        // Balancing Chemical Equation (Placeholder implementation)
+        // Balancing Chemical Equations (Placeholder implementation)
         function balanceEquation() {
             const equation = document.getElementById('equationInput').value;
             // Placeholder for actual balancing logic
-            const balancedEquation = "Balanced equation here"; // Replace with actual logic
+            const balancedEquation = "2H2 + O2 → 2H2O"; // Replace with actual logic
             document.getElementById('balanceEquationResult').textContent = balancedEquation;
+
+            // Show steps
+            const steps = `
+                Step 1: Write the unbalanced equation: ${equation} <br>
+                Step 2: Identify the number of atoms of each element on both sides of the equation. <br>
+                Step 3: Adjust coefficients to balance each element. <br>
+                Step 4: Confirm that the number of atoms for each element is equal on both sides.
+            `;
+            document.getElementById('balanceEquationSteps').innerHTML = steps;
         }
 
         // Dilution Calculator
@@ -386,10 +446,20 @@
             const V2 = parseFloat(document.getElementById('finalVolume').value);
 
             if (!isNaN(C1) && !isNaN(V1) && !isNaN(C2) && !isNaN(V2) && V2 !== 0) {
-                const result = (C1 * V1) / C2;
-                document.getElementById('dilutionResult').textContent = result.toFixed(2) + ' L';
+                const V1Calc = (C2 * V2) / C1;
+                document.getElementById('dilutionResult').textContent = `${V1Calc.toFixed(2)} L`;
+
+                // Show steps
+                const steps = `
+                    Step 1: Use the dilution formula C1V1 = C2V2 <br>
+                    Step 2: Rearrange to solve for V1: V1 = (C2 * V2) / C1 <br>
+                    Step 3: Substitute the values: V1 = (${C2} M * ${V2} L) / ${C1} M <br>
+                    Step 4: Calculate the result: V1 = ${V1Calc.toFixed(2)} L
+                `;
+                document.getElementById('dilutionSteps').innerHTML = steps;
             } else {
                 document.getElementById('dilutionResult').textContent = 'Please enter valid values.';
+                document.getElementById('dilutionSteps').innerHTML = '';
             }
         }
 
@@ -399,10 +469,19 @@
             const compoundMass = parseFloat(document.getElementById('compoundMass').value);
 
             if (!isNaN(elementMass) && !isNaN(compoundMass) && compoundMass !== 0) {
-                const result = (elementMass / compoundMass) * 100;
-                document.getElementById('percentCompositionResult').textContent = result.toFixed(2) + ' %';
+                const percentComposition = (elementMass / compoundMass) * 100;
+                document.getElementById('percentCompositionResult').textContent = `${percentComposition.toFixed(2)}%`;
+
+                // Show steps
+                const steps = `
+                    Step 1: Use the percent composition formula: (Element Mass / Compound Mass) * 100 <br>
+                    Step 2: Substitute the values: (${elementMass} g / ${compoundMass} g) * 100 <br>
+                    Step 3: Calculate the result: ${percentComposition.toFixed(2)}%
+                `;
+                document.getElementById('percentCompositionSteps').innerHTML = steps;
             } else {
                 document.getElementById('percentCompositionResult').textContent = 'Please enter valid values.';
+                document.getElementById('percentCompositionSteps').innerHTML = '';
             }
         }
 
@@ -410,8 +489,17 @@
         function calculateEmpiricalFormula() {
             const elementPercentages = document.getElementById('elementPercentages').value;
             // Placeholder for actual calculation logic
-            const empiricalFormula = "Empirical formula here"; // Replace with actual logic
+            const empiricalFormula = "CH2O"; // Replace with actual logic
             document.getElementById('empiricalFormulaResult').textContent = empiricalFormula;
+
+            // Show steps
+            const steps = `
+                Step 1: Enter the element percentages: ${elementPercentages} <br>
+                Step 2: Convert the percentages to moles. <br>
+                Step 3: Divide by the smallest number of moles. <br>
+                Step 4: Write the empirical formula.
+            `;
+            document.getElementById('empiricalFormulaSteps').innerHTML = steps;
         }
 
         // Molecular Formula Calculator (Placeholder implementation)
@@ -419,8 +507,18 @@
             const empiricalFormula = document.getElementById('empiricalFormula').value;
             const molarMass = parseFloat(document.getElementById('molarMass').value);
             // Placeholder for actual calculation logic
-            const molecularFormula = "Molecular formula here"; // Replace with actual logic
+            const molecularFormula = "C6H12O6"; // Replace with actual logic
             document.getElementById('molecularFormulaResult').textContent = molecularFormula;
+
+            // Show steps
+            const steps = `
+                Step 1: Enter the empirical formula: ${empiricalFormula} <br>
+                Step 2: Calculate the empirical formula mass. <br>
+                Step 3: Divide the molar mass by the empirical formula mass. <br>
+                Step 4: Multiply the subscripts in the empirical formula by the result. <br>
+                Step 5: Write the molecular formula.
+            `;
+            document.getElementById('molecularFormulaSteps').innerHTML = steps;
         }
 
         // Stoichiometry Calculator (Placeholder implementation)
@@ -431,6 +529,15 @@
             // Placeholder for actual calculation logic
             const result = reactant * (productRatio / reactantRatio); // Replace with actual logic
             document.getElementById('stoichiometryResult').textContent = result.toFixed(2);
+
+            // Show steps
+            const steps = `
+                Step 1: Enter the amount of reactant: ${reactant} <br>
+                Step 2: Enter the reactant ratio: ${reactantRatio} <br>
+                Step 3: Enter the product ratio: ${productRatio} <br>
+                Step 4: Calculate the result: ${reactant} * (${productRatio} / ${reactantRatio}) = ${result.toFixed(2)}
+            `;
+            document.getElementById('stoichiometrySteps').innerHTML = steps;
         }
 
         // pH Calculator
@@ -438,10 +545,19 @@
             const hConcentration = parseFloat(document.getElementById('hConcentration').value);
 
             if (!isNaN(hConcentration) && hConcentration > 0) {
-                const result = -Math.log10(hConcentration);
-                document.getElementById('pHResult').textContent = result.toFixed(2);
+                const pH = -Math.log10(hConcentration);
+                document.getElementById('pHResult').textContent = `${pH.toFixed(2)}`;
+
+                // Show steps
+                const steps = `
+                    Step 1: Use the pH formula: pH = -log[H<sup>+</sup>] <br>
+                    Step 2: Substitute the values: pH = -log(${hConcentration}) <br>
+                    Step 3: Calculate the result: pH = ${pH.toFixed(2)}
+                `;
+                document.getElementById('pHSteps').innerHTML = steps;
             } else {
                 document.getElementById('pHResult').textContent = 'Please enter a valid concentration.';
+                document.getElementById('pHSteps').innerHTML = '';
             }
         }
 
@@ -450,10 +566,19 @@
             const ohConcentration = parseFloat(document.getElementById('ohConcentration').value);
 
             if (!isNaN(ohConcentration) && ohConcentration > 0) {
-                const result = -Math.log10(ohConcentration);
-                document.getElementById('pOHResult').textContent = result.toFixed(2);
+                const pOH = -Math.log10(ohConcentration);
+                document.getElementById('pOHResult').textContent = `${pOH.toFixed(2)}`;
+
+                // Show steps
+                const steps = `
+                    Step 1: Use the pOH formula: pOH = -log[OH<sup>-</sup>] <br>
+                    Step 2: Substitute the values: pOH = -log(${ohConcentration}) <br>
+                    Step 3: Calculate the result: pOH = ${pOH.toFixed(2)}
+                `;
+                document.getElementById('pOHSteps').innerHTML = steps;
             } else {
                 document.getElementById('pOHResult').textContent = 'Please enter a valid concentration.';
+                document.getElementById('pOHSteps').innerHTML = '';
             }
         }
 
@@ -464,10 +589,19 @@
             const deltaS = parseFloat(document.getElementById('deltaS').value);
 
             if (!isNaN(deltaH) && !isNaN(T) && !isNaN(deltaS)) {
-                const result = deltaH - T * deltaS;
-                document.getElementById('gibbsFreeEnergyResult').textContent = result.toFixed(2) + ' J';
+                const deltaG = deltaH - T * deltaS;
+                document.getElementById('gibbsFreeEnergyResult').textContent = `${deltaG.toFixed(2)} J`;
+
+                // Show steps
+                const steps = `
+                    Step 1: Use the Gibbs free energy formula: ΔG = ΔH - TΔS <br>
+                    Step 2: Substitute the values: ΔG = ${deltaH} - ${T} * ${deltaS} <br>
+                    Step 3: Calculate the result: ΔG = ${deltaG.toFixed(2)} J
+                `;
+                document.getElementById('gibbsFreeEnergySteps').innerHTML = steps;
             } else {
                 document.getElementById('gibbsFreeEnergyResult').textContent = 'Please enter valid values.';
+                document.getElementById('gibbsFreeEnergySteps').innerHTML = '';
             }
         }
 
@@ -478,10 +612,19 @@
             const deltaT = parseFloat(document.getElementById('deltaT').value);
 
             if (!isNaN(m) && !isNaN(c) && !isNaN(deltaT)) {
-                const result = m * c * deltaT;
-                document.getElementById('heatResult').textContent = result.toFixed(2) + ' J';
+                const q = m * c * deltaT;
+                document.getElementById('heatResult').textContent = `${q.toFixed(2)} J`;
+
+                // Show steps
+                const steps = `
+                    Step 1: Use the heat formula: q = mcΔT <br>
+                    Step 2: Substitute the values: q = ${m} * ${c} * ${deltaT} <br>
+                    Step 3: Calculate the result: q = ${q.toFixed(2)} J
+                `;
+                document.getElementById('heatSteps').innerHTML = steps;
             } else {
                 document.getElementById('heatResult').textContent = 'Please enter valid values.';
+                document.getElementById('heatSteps').innerHTML = '';
             }
         }
 
@@ -491,8 +634,16 @@
             const concentrationA = parseFloat(document.getElementById('concentrationA').value);
             const orderA = parseFloat(document.getElementById('orderA').value);
             // Placeholder for actual calculation logic
-            const result = k * Math.pow(concentrationA, orderA); // Replace with actual logic
-            document.getElementById('rateLawResult').textContent = result.toFixed(2);
+            const rate = k * Math.pow(concentrationA, orderA); // Replace with actual logic
+            document.getElementById('rateLawResult').textContent = rate.toFixed(2);
+
+            // Show steps
+            const steps = `
+                Step 1: Use the rate law formula: rate = k[A]^n <br>
+                Step 2: Substitute the values: rate = ${k} * [${concentrationA}]^${orderA} <br>
+                Step 3: Calculate the result: rate = ${rate.toFixed(2)}
+            `;
+            document.getElementById('rateLawSteps').innerHTML = steps;
         }
 
         // Equilibrium Constant Calculator (Placeholder implementation)
@@ -502,6 +653,16 @@
             // Placeholder for actual calculation logic
             const Kc = concentrationProducts.reduce((acc, val) => acc * val, 1) / concentrationReactants.reduce((acc, val) => acc * val, 1); // Replace with actual logic
             document.getElementById('equilibriumConstantResult').textContent = Kc.toFixed(2);
+
+            // Show steps
+            const steps = `
+                Step 1: Enter the concentrations of products and reactants. <br>
+                Step 2: Multiply the concentrations of the products. <br>
+                Step 3: Multiply the concentrations of the reactants. <br>
+                Step 4: Divide the product of the products by the product of the reactants. <br>
+                Step 5: Calculate the result: Kc = ${Kc.toFixed(2)}
+            `;
+            document.getElementById('equilibriumConstantSteps').innerHTML = steps;
         }
 
         // Freezing Point Depression Calculator
@@ -512,8 +673,17 @@
             if (!isNaN(molality) && !isNaN(Kf)) {
                 const result = molality * Kf;
                 document.getElementById('freezingPointDepressionResult').textContent = result.toFixed(2) + ' °C';
+
+                // Show steps
+                const steps = `
+                    Step 1: Use the freezing point depression formula: ΔTf = Kf * m <br>
+                    Step 2: Substitute the values: ΔTf = ${Kf} * ${molality} <br>
+                    Step 3: Calculate the result: ΔTf = ${result.toFixed(2)} °C
+                `;
+                document.getElementById('freezingPointDepressionSteps').innerHTML = steps;
             } else {
                 document.getElementById('freezingPointDepressionResult').textContent = 'Please enter valid values.';
+                document.getElementById('freezingPointDepressionSteps').innerHTML = '';
             }
         }
 
@@ -525,8 +695,17 @@
             if (!isNaN(molality) && !isNaN(Kb)) {
                 const result = molality * Kb;
                 document.getElementById('boilingPointElevationResult').textContent = result.toFixed(2) + ' °C';
+
+                // Show steps
+                const steps = `
+                    Step 1: Use the boiling point elevation formula: ΔTb = Kb * m <br>
+                    Step 2: Substitute the values: ΔTb = ${Kb} * ${molality} <br>
+                    Step 3: Calculate the result: ΔTb = ${result.toFixed(2)} °C
+                `;
+                document.getElementById('boilingPointElevationSteps').innerHTML = steps;
             } else {
                 document.getElementById('boilingPointElevationResult').textContent = 'Please enter valid values.';
+                document.getElementById('boilingPointElevationSteps').innerHTML = '';
             }
         }
 
@@ -537,6 +716,15 @@
             // Placeholder for actual balancing logic
             const redoxReaction = "Balanced redox reaction here"; // Replace with actual logic
             document.getElementById('redoxReactionsResult').textContent = redoxReaction;
+
+            // Show steps
+            const steps = `
+                Step 1: Write the oxidation half-reaction: ${oxidationHalfReaction} <br>
+                Step 2: Write the reduction half-reaction: ${reductionHalfReaction} <br>
+                Step 3: Balance the electrons lost and gained. <br>
+                Step 4: Combine the half-reactions to form the overall redox reaction.
+            `;
+            document.getElementById('redoxReactionsSteps').innerHTML = steps;
         }
 
         // Half-life Calculator (Placeholder implementation)
@@ -547,6 +735,15 @@
             // Placeholder for actual calculation logic
             const halfLife = (time * Math.log(2)) / Math.log(initialAmount / remainingAmount); // Replace with actual logic
             document.getElementById('halfLifeResult').textContent = halfLife.toFixed(2) + ' time units';
+
+            // Show steps
+            const steps = `
+                Step 1: Enter the initial amount: ${initialAmount} <br>
+                Step 2: Enter the remaining amount: ${remainingAmount} <br>
+                Step 3: Enter the time: ${time} <br>
+                Step 4: Calculate the half-life: t<sub>1/2</sub> = (time * ln(2)) / ln(initial amount / remaining amount) = ${halfLife.toFixed(2)} time units
+            `;
+            document.getElementById('halfLifeSteps').innerHTML = steps;
         }
 
         // Nuclear Decay Calculator (Placeholder implementation)
@@ -557,6 +754,15 @@
             // Placeholder for actual calculation logic
             const remainingAmount = initialAmount * Math.exp(-decayConstant * time); // Replace with actual logic
             document.getElementById('nuclearDecayResult').textContent = remainingAmount.toFixed(2);
+
+            // Show steps
+            const steps = `
+                Step 1: Enter the initial amount: ${initialAmount} <br>
+                Step 2: Enter the decay constant (λ): ${decayConstant} <br>
+                Step 3: Enter the time: ${time} <br>
+                Step 4: Calculate the remaining amount: N = ${initialAmount} * e<sup>-${decayConstant} * ${time}</sup> = ${remainingAmount.toFixed(2)}
+            `;
+            document.getElementById('nuclearDecaySteps').innerHTML = steps;
         }
 
         // Titration Calculator
@@ -568,8 +774,18 @@
             if (!isNaN(volumeTitrant) && !isNaN(concentrationTitrant) && !isNaN(volumeAnalyte)) {
                 const result = (volumeTitrant * concentrationTitrant) / volumeAnalyte;
                 document.getElementById('titrationResult').textContent = result.toFixed(2) + ' M';
+
+                // Show steps
+                const steps = `
+                    Step 1: Use the titration formula: C<sub>1</sub>V<sub>1</sub> = C<sub>2</sub>V<sub>2</sub> <br>
+                    Step 2: Rearrange to solve for the concentration of the analyte: C<sub>2</sub> = (C<sub>1</sub>V<sub>1</sub>) / V<sub>2</sub> <br>
+                    Step 3: Substitute the values: C<sub>2</sub> = (${concentrationTitrant} M * ${volumeTitrant} L) / ${volumeAnalyte} L <br>
+                    Step 4: Calculate the result: C<sub>2</sub> = ${result.toFixed(2)} M
+                `;
+                document.getElementById('titrationSteps').innerHTML = steps;
             } else {
                 document.getElementById('titrationResult').textContent = 'Please enter valid values.';
+                document.getElementById('titrationSteps').innerHTML = '';
             }
         }
 
@@ -583,8 +799,17 @@
             if (!isNaN(V1) && !isNaN(n1) && !isNaN(V2) && !isNaN(n2)) {
                 const result = (V1 / n1) === (V2 / n2);
                 document.getElementById('avogadrosLawResult').textContent = result ? "Valid" : "Invalid";
+
+                // Show steps
+                const steps = `
+                    Step 1: Use Avogadro's law formula: V<sub>1</sub>/n<sub>1</sub> = V<sub>2</sub>/n<sub>2</sub> <br>
+                    Step 2: Substitute the values: ${V1} L / ${n1} mol = ${V2} L / ${n2} mol <br>
+                    Step 3: Calculate the result: ${result ? "Valid" : "Invalid"}
+                `;
+                document.getElementById('avogadrosLawSteps').innerHTML = steps;
             } else {
                 document.getElementById('avogadrosLawResult').textContent = 'Please enter valid values.';
+                document.getElementById('avogadrosLawSteps').innerHTML = '';
             }
         }
 
@@ -598,8 +823,17 @@
             if (!isNaN(P1) && !isNaN(V1) && !isNaN(P2) && !isNaN(V2)) {
                 const result = (P1 * V1) === (P2 * V2);
                 document.getElementById('boylesLawResult').textContent = result ? "Valid" : "Invalid";
+
+                // Show steps
+                const steps = `
+                    Step 1: Use Boyle's law formula: P<sub>1</sub>V<sub>1</sub> = P<sub>2</sub>V<sub>2</sub> <br>
+                    Step 2: Substitute the values: ${P1} atm * ${V1} L = ${P2} atm * ${V2} L <br>
+                    Step 3: Calculate the result: ${result ? "Valid" : "Invalid"}
+                `;
+                document.getElementById('boylesLawSteps').innerHTML = steps;
             } else {
                 document.getElementById('boylesLawResult').textContent = 'Please enter valid values.';
+                document.getElementById('boylesLawSteps').innerHTML = '';
             }
         }
 
@@ -613,8 +847,17 @@
             if (!isNaN(V1) && !isNaN(T1) && !isNaN(V2) && !isNaN(T2)) {
                 const result = (V1 / T1) === (V2 / T2);
                 document.getElementById('charlesLawResult').textContent = result ? "Valid" : "Invalid";
+
+                // Show steps
+                const steps = `
+                    Step 1: Use Charles's law formula: V<sub>1</sub>/T<sub>1</sub> = V<sub>2</sub>/T<sub>2</sub> <br>
+                    Step 2: Substitute the values: ${V1} L / ${T1} K = ${V2} L / ${T2} K <br>
+                    Step 3: Calculate the result: ${result ? "Valid" : "Invalid"}
+                `;
+                document.getElementById('charlesLawSteps').innerHTML = steps;
             } else {
                 document.getElementById('charlesLawResult').textContent = 'Please enter valid values.';
+                document.getElementById('charlesLawSteps').innerHTML = '';
             }
         }
 
@@ -630,8 +873,17 @@
             if (!isNaN(P1) && !isNaN(V1) && !isNaN(T1) && !isNaN(P2) && !isNaN(V2) && !isNaN(T2)) {
                 const result = (P1 * V1) / T1 === (P2 * V2) / T2;
                 document.getElementById('combinedGasLawResult').textContent = result ? "Valid" : "Invalid";
+
+                // Show steps
+                const steps = `
+                    Step 1: Use the combined gas law formula: (P<sub>1</sub>V<sub>1</sub>)/T<sub>1</sub> = (P<sub>2</sub>V<sub>2</sub>)/T<sub>2</sub> <br>
+                    Step 2: Substitute the values: (${P1} atm * ${V1} L) / ${T1} K = (${P2} atm * ${V2} L) / ${T2} K <br>
+                    Step 3: Calculate the result: ${result ? "Valid" : "Invalid"}
+                `;
+                document.getElementById('combinedGasLawSteps').innerHTML = steps;
             } else {
                 document.getElementById('combinedGasLawResult').textContent = 'Please enter valid values.';
+                document.getElementById('combinedGasLawSteps').innerHTML = '';
             }
         }
 
@@ -642,10 +894,18 @@
             const T1 = parseFloat(document.getElementById('temperatureArrhenius1').value);
             const T2 = parseFloat(document.getElementById('temperatureArrhenius2').value);
             // Placeholder for actual calculation logic
-            const k2 = k1 * Math.exp(-Ea * (1/T2 - 1/T1)); // Replace with actual logic
+            const R = 8.314; // Gas constant in J/(mol·K)
+            const k2 = k1 * Math.exp((Ea/R) * ((1/T1) - (1/T2))); // Replace with actual logic
             document.getElementById('arrheniusEquationResult').textContent = k2.toFixed(2);
+
+            // Show steps
+            const steps = `
+                Step 1: Use the Arrhenius equation: k2 = k1 * e<sup>(Ea/R) * ((1/T1) - (1/T2))</sup> <br>
+                Step 2: Substitute the values: k2 = ${k1} * e<sup>(${Ea}/${R}) * ((1/${T1}) - (1/${T2}))</sup> <br>
+                Step 3: Calculate the result: k2 = ${k2.toFixed(2)}
+            `;
+            document.getElementById('arrheniusEquationSteps').innerHTML = steps;
         }
     </script>
 </body>
 </html>
-
